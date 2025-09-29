@@ -1,5 +1,6 @@
 import json
 import os
+import argparse
 from datetime import datetime
 import re
 
@@ -23,9 +24,9 @@ def parse_trello_date(date_str):
     except:
         return None
 
-def convert_to_markdown():
+def convert_to_markdown(json_file):
     # Load JSON data
-    with open('2025-09-28-trello-export.json', 'r') as f:
+    with open(json_file, 'r') as f:
         data = json.load(f)
 
     board_name = data.get('name', 'Untitled Board')
@@ -105,5 +106,9 @@ def convert_to_markdown():
     print(f"\nConversion complete! {len(cards)} markdown files created in '{output_dir}' directory")
 
 if __name__ == "__main__":
-    convert_to_markdown()
+    parser = argparse.ArgumentParser(description='Convert Trello board JSON export to Obsidian markdown files')
+    parser.add_argument('json_file', help='Path to the Trello JSON export file')
+
+    args = parser.parse_args()
+    convert_to_markdown(args.json_file)
 

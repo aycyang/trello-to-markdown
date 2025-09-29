@@ -19,12 +19,10 @@ A Python script that converts Trello JSON exports to Obsidian-compatible markdow
 ## Usage
 
 1. Export your Trello board as JSON from Trello (Board Menu → More → Print and Export → Export as JSON)
-2. Place the JSON file in the same directory as `migrate.py`
-3. Update the filename in the script (line 28) to match your export file
-4. Run the script:
+2. Run the script with your JSON export file as an argument:
 
 ```bash
-python3 migrate.py
+python3 migrate.py your-trello-export.json
 ```
 
 The script will create a directory named `[BoardName]_markdown` containing subdirectories for each Trello list with cards.
