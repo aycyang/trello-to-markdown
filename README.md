@@ -1,6 +1,6 @@
 # Trello to Obsidian Markdown Migration Script
 
-Warning: 100% vibecoded.
+**Warning:** 100% vibecoded. I haven't tested this on any data other than my own. Use at your own risk.
 
 A Python script that converts Trello JSON exports to Obsidian-compatible markdown files with proper organization and metadata.
 
